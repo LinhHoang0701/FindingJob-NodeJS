@@ -1,4 +1,4 @@
-require('dotenv').config() // needs .env file
+require("dotenv").config(); // needs .env file
 
 module.exports = {
   port: process.env.PORT,
@@ -6,7 +6,7 @@ module.exports = {
   env: process.env.NODE_ENV,
   secret: process.env.APP_SECRET,
   mongo: {
-    uri: process.env.MONGOURI
+    uri: process.env.MONGOURI,
   },
   sql: {
     connectionLimit: process.env.SQL_CONNECTIONS_LIMIT,
@@ -14,20 +14,23 @@ module.exports = {
     user: process.env.SQL_USER,
     password: process.env.SQL_PASSWORD,
     database: process.env.SQL_DATABASE,
-    port: process.env.SQL_DATABASE_PORT
+    port: process.env.SQL_DATABASE_PORT,
   },
   awsaccess: {
     secretAccessKey: process.env.SECRET_ACCESS_KEY,
     accessKeyId: process.env.ACCESS_KEY_ID,
-    region: process.env.REGION
+    region: process.env.REGION,
   },
   bucket: process.env.BUCKET,
   neo4j: {
     uri: process.env.NEO4J_URI,
     port: process.env.NEO4J_PORT,
     username: process.env.NEO4J_USERNAME,
-    password: process.env.NEO4J_PASSWORD
-
+    password: process.env.NEO4J_PASSWORD,
   },
-  redisPort: process.env.REDIS_PORT
-}
+  redisPort: process.env.REDIS_PORT,
+  mail: {
+    email: process.env.EMAIL,
+    password: process.env.PASSWORD,
+  },
+};

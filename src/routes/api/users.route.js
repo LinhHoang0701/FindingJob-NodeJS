@@ -11,6 +11,7 @@ const { userId } = require("../../validations/common.validation");
 
 router.get("/", auth(), usersController.getAll);
 router.get("/dashboard", auth(), dashboardController.generateDashboardData);
+router.get("/profile", auth(), usersController.getProfile);
 router.get("/:userId", auth(), validator(userId), usersController.getOne);
 router.put(
   "/:userId",
@@ -20,8 +21,5 @@ router.put(
   usersController.putOne
 );
 router.delete("/:userId", auth(), validator(userId), usersController.deleteOne);
-// router.post('/:userId/connect', auth(), validator(userId), usersController.connect)
-// router.get('/:userId/connections', auth(), validator(userId), usersController.connections)
-// router.get('/:userId/mutual', auth(), usersController.mutual)
 
 module.exports = router;

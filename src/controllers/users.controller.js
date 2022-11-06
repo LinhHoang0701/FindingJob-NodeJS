@@ -257,3 +257,16 @@ exports.mutual = async (req, res, next) => {
     next(error)
   }
 }
+
+exports.getProfile = async (req, res, next) => {
+  try {
+    const user = req.user?._id;
+    const userDoc = await User.findById(user, { password: 0 });
+
+    res.status(200).json({
+      user: userDoc,
+    });
+  } catch (error) {
+    next(error);
+  }
+};

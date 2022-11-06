@@ -26,6 +26,11 @@ const userSchema = new Schema(
       default: "applicant",
       enum: roles,
     },
+    phoneNumber: {
+      type: String,
+    },
+    resetPasswordToken: { type: String },
+    resetPasswordExpires: { type: Date },
   },
   {
     timestamps: true,
