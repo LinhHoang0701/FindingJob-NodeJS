@@ -17,7 +17,7 @@ exports.sendEmail = async (email, type, host, data) => {
   try {
     const message = prepareTemplate(type, host, data);
     const config = {
-      from: `MockAPI <${sender}>`,
+      from: `FindingJob <${sender}>`,
       to: email,
       subject: message.subject,
       text: message.text,

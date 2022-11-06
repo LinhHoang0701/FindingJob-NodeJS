@@ -39,7 +39,10 @@ exports.apply = async (req, res, next) => {
       application_id: savedApplication._id,
     };
     await sql.query("INSERT INTO job_application SET ?", applicationPointers);
-    // await deleteIncompleteApplication(applicationPointers.applicant_id, applicationPointers.job_id)
+    await deleteIncompleteApplication(
+      applicationPointers.applicant_id,
+      applicationPointers.job_id
+    );
     response.payLoad = savedApplication;
     res.status(httpStatus.OK);
     res.send(response);
